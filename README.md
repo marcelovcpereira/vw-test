@@ -59,6 +59,6 @@ Possible improvements:
 - Tests
 - Loading CSV file from the HTTP endpoint instead of building the image containing the file
 - Switching installation script for a better automation like Ansible or Saltstack
-- Monitoring & Alerts
+- Monitoringm, Health Checks/Probes & Alerts
 - More robustness for pipeline of ingestion/preparation
 - The dashboard can have better UI/UX, grouping rows and expanding the table for better visualizing the results
