@@ -3,7 +3,7 @@ MAINTAINER Marcelo Pereira <marcelovcpereira@gmail.com>
 
 RUN mkdir /scripts
 
-COPY marcelo-vw-test-release.jar /scripts/marcelo-vw-test.jar
+COPY marcelo-vw-test.jar /scripts/marcelo-vw-test.jar
 COPY AirQualityUCI.csv /scripts
 
 COPY docker-entrypoint.sh /scripts/docker-entrypoint.sh
