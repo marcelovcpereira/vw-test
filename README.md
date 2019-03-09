@@ -67,3 +67,4 @@ Possible improvements:
 - Exposing the app image (marcelo-vw-test:latest) in an external Registry instead of building it during the process
 - Loading CSV file from the HTTP endpoint instead of building the image containing the file
 - Switching installation script for a better automation like Ansible or Saltstack
+- Monitoring & Alerts
