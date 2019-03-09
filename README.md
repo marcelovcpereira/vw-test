@@ -15,7 +15,16 @@ The steps to execute the application are as follows:
 ```
 git clone https://github.com/marcelovcpereira/vw-test
 cd vw-test/src/main/resources/devops
+```
+
+Then you can install using Docker Compose:
+```
 sh run-marcelo-vw-test.sh
+```
+
+Of Kubernetes:
+```
+sh install-marcelo-vw-test-k8s.sh
 ```
 Important:
 The installation script requires UBUNTU with SNAP installed
