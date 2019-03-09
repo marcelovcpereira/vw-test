@@ -12,19 +12,14 @@ The service Marcelo VW Test also exposes a webserver at port 8080 for showing da
 
 The steps to execute the application are as follows:
 
+Install using Docker Compose:
 ```
-git clone https://github.com/marcelovcpereira/vw-test
-cd vw-test/src/main/resources/devops
-```
-
-Then you can install using Docker Compose:
-```
-sh run-marcelo-vw-test.sh
+sh install-with-docker.sh
 ```
 
-Of Kubernetes:
+Or Kubernetes:
 ```
-sh install-marcelo-vw-test-k8s.sh
+sh install-with-k8s.sh
 ```
 
 After application boots up, you can acess the dashboard at:
@@ -58,7 +53,7 @@ like opening ports or external ips. For accessing locally it should be straightf
 
 Possible improvements:
 - Decoupling frontend dashboard as an APP for consuming the REST Controller endpoints (instead of integrated MVC)
-- Usage of Kubernetes instead of docker-compose (Or maybe docker-swarm)
+- Usage of Kubernetes instead of docker-compose (partially implemented)
 - In case of using the recipes of K8s we could use Helm for automating even further the deployment process
 - Usage of TLS for enabling HTTPS for production ready version
 - Tests
