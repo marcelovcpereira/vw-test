@@ -2,7 +2,7 @@
 
 This project is the solution for the Volkswagen test challenge
 
-This project is a Docker Composed application, made of 2 Services:
+This project is a Docker Compose application, made of 2 integrated Services:
 
 Marcelo Mysql, that runs an empty mysql container image to persist measures data.
 Marcelo VW Test, that runs a dockerized SpringBoot application that reads measures information from UCI repository (http://archive.ics.uci.edu/ml/datasets/air+quality)
@@ -17,11 +17,14 @@ git clone https://github.com/marcelovcpereira/vw-test
 cd vw-test/src/main/resources/devops
 sh run-marcelo-vw-test.sh
 ```
+Important:
+The installation script requires UBUNTU with SNAP installed
 
 After application boots up, you can acess the dashboard at:
 ```
 http://localhost:8080/getMVCDashboard
 ```
+
 
 If you do not have a browser to render the HTML, you can also query the REST endpoints:
 ```
