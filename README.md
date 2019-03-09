@@ -66,3 +66,4 @@ Possible improvements:
 - Switching installation script for a better automation like Ansible or Saltstack
 - Monitoring & Alerts
 - More robustness for pipeline of ingestion/preparation
+- The dashboard can have better UI/UX, grouping rows and expanding the table for better visualizing the results
