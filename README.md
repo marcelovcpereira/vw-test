@@ -26,8 +26,6 @@ Of Kubernetes:
 ```
 sh install-marcelo-vw-test-k8s.sh
 ```
-Important:
-The installation script requires UBUNTU with SNAP installed
 
 After application boots up, you can acess the dashboard at:
 ```
