@@ -28,13 +28,13 @@ http://localhost:8080/getMVCDashboard
 
 If you do not have a browser to render the HTML, you can also query the REST endpoints:
 ```
-http://localhost:8080/getNO2Measures
+curl -XGET http://localhost:8080/getNO2Measures
 This one, returns all measures (full objects) that contains NO2 concentration above standards
 
-http://localhost:8080/getNO2Days
+curl -XGET http://localhost:8080/getNO2Days
 This one, returns the dates (in the format dd/mm/yyyy) that contains NO2 concentration above standards
 
-http://localhost:8080/getNO2DaysCount
+curl -XGET http://localhost:8080/getNO2DaysCount
 This one, return the amount of dates that contains NO2 concentration above standards
 ```
 
@@ -46,6 +46,8 @@ So the marcelo-vw-test container is responsible for:
 2) parsing/validating rows into valid Measures
 3) persist measures in an external DBMS (in this case MySQL 5.6)
 4) expose REST and MVC endpoints for collecting/showing data
+5) Depending where you run the application, if you want external access to it, it may be necessary further configuration
+like opening ports or external ips. For accessing locally it should be straightforward.
 
 Possible improvements:
 - Decoupling frontend dashboard as an APP for consuming the REST Controller endpoints (instead of integrated MVC)
@@ -54,6 +56,4 @@ Possible improvements:
 - Tests
 - Exposing the app image (marcelo-vw-test:latest) in an external Registry instead of building it during the process
 - Loading CSV file from the HTTP endpoint instead of building the image containing the file
-
-
-
+- Switching installation script for a better automation like Ansible or Saltstack
