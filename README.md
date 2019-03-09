@@ -52,6 +52,7 @@ like opening ports or external ips. For accessing locally it should be straightf
 Possible improvements:
 - Decoupling frontend dashboard as an APP for consuming the REST Controller endpoints (instead of integrated MVC)
 - Usage of Kubernetes instead of docker-compose (Or maybe docker-swarm)
+- In case of using the recipes of K8s we could use Helm for automating even further the deployment process
 - Usage of TLS for enabling HTTPS for production ready version
 - Tests
 - Exposing the app image (marcelo-vw-test:latest) in an external Registry instead of building it during the process

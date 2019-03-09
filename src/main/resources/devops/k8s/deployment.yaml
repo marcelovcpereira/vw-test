@@ -26,23 +26,23 @@ spec:
         name: marcelo-vw-test
         env:
         - name: CSV_SEPARATOR
-          value: ;
+          value: ";"
         - name: CSV_DATE_PATTERN
-          value: dd/MM/yyyy
+          value: "dd/MM/yyyy"
         - name: CSV_TIME_PATTERN
-          value: HH.mm.ss
+          value: "HH.mm.ss"
         - name: CSV_PATH
-          value: /scripts/AirQualityUCI.csv
+          value: "/scripts/AirQualityUCI.csv"
         - name: MEASURES_DATABASE_HOST
-          value: 127.0.0.1
+          value: "127.0.0.1"
         - name: MEASURES_DATABASE_PORT
-          value: 3306
+          value: "3306"
         - name: MEASURES_DATABASE_NAME
-          value: measures
+          value: "measures"
         - name: MEASURES_DATABASE_PASSWORD
-          value: root
+          value: "root"
         - name: MEASURES_DATABASE_USER
-          value: root
+          value: "root"
         ports:
         - containerPort: 8080
           name: marcelo-vw-test
