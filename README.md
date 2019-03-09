@@ -23,9 +23,21 @@ After application boots up, you can acess the dashboard at:
 http://localhost:8080/getMVCDashboard
 ```
 
+If you do not have a browser to render the HTML, you can also query the REST endpoints:
+```
+http://localhost:8080/getNO2Measures
+This one, returns all measures (full objects) that contains NO2 concentration above standards
+
+http://localhost:8080/getNO2Days
+This one, returns the dates (in the format dd/mm/yyyy) that contains NO2 concentration above standards
+
+http://localhost:8080/getNO2DaysCount
+This one, return the amount of dates that contains NO2 concentration above standards
+```
+
 Details:
 
-Due to time, I prefer to create one App for handling multiple steps instead of separate the concerns in different layers.
+Due to time, I preferred to create one App for handling multiple steps instead of separate the concerns in different layers.
 So the marcelo-vw-test container is responsible for:
 1) loading the CSV file
 2) parsing/validating rows into valid Measures
