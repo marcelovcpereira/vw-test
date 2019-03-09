@@ -62,7 +62,6 @@ Possible improvements:
 - In case of using the recipes of K8s we could use Helm for automating even further the deployment process
 - Usage of TLS for enabling HTTPS for production ready version
 - Tests
-- Using app image in Dockerhub instead of building it during the process (for Docker Compose only)
 - Loading CSV file from the HTTP endpoint instead of building the image containing the file
 - Switching installation script for a better automation like Ansible or Saltstack
 - Monitoring & Alerts

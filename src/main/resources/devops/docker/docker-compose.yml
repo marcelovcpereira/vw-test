@@ -3,7 +3,7 @@ services:
   marcelo-vw-test:
     depends_on:
       - marcelo-mysql
-    image: marcelo-vw-test:latest
+    image: marcelovcpereira/vw-test:latest
     ports:
       - "8080:8080"
     environment:
