@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: marcelo-vw-test
+spec:
+  selector:
+    matchLabels:
+      app: marcelo-vw-test
+  template:
+    metadata:
+      labels:
+        app: marcelo-vw-test
+    spec:
+      containers:
+      - image: mysql:5.6
+        name: mysql
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: root
+        - name: MYSQL_DATABASE
+          value: measures
+        ports:
+        - containerPort: 3306
+          name: mysql
+      - image: marcelo-vw-test:latest
+        name: marcelo-vw-test
+        env:
+        - name: CSV_SEPARATOR
+          value: ;
+        - name: CSV_DATE_PATTERN
+          value: dd/MM/yyyy
+        - name: CSV_TIME_PATTERN
+          value: HH.mm.ss
+        - name: CSV_PATH
+          value: /Users/marcelopereira/Downloads/AirQualityUCI/AirQualityUCI.csv
+        - name: MEASURES_DATABASE_HOST
+          value: 127.0.0.1
+        - name: MEASURES_DATABASE_PORT
+          value: 3306
+        - name: MEASURES_DATABASE_NAME
+          value: measures
+        - name: MEASURES_DATABASE_PASSWORD
+          value: root
+        - name: MEASURES_DATABASE_USER
+          value: root
+        ports:
+        - containerPort: 8080
+          name: marcelo-vw-test

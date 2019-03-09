@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Marcelo Volkswagen Test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css">
+</head>
+
+<body>
+<table class="table table-responsive table-hover">
+    <thead>
+    <tr>
+        <th> Date </th>
+        <th> Time </th>
+        <th> Average CO Concentration </th>
+        <th> Average Sensor Response CO </th>
+        <th> Average Non-Metanic HydroCarbons </th>
+        <th> Average Benzene Concentration </th>
+        <th> Sensor NMHC </th>
+        <th> Average NOx Concentration </th>
+        <th> Sensor NOx </th>
+        <th> Average NO2 Concentration </th>
+        <th> Sensor NO2 </th>
+        <th> Sensor O3 </th>
+        <th> Temperature </th>
+        <th> Relative Humidity </th>
+        <th> Absolute Humidity </th>
+    </tr>
+    </thead>
+    <tbody >
+    <tr th:if="${measureMap.keySet.isEmpty}" class="clickable" data-toggle="collapse" data-target="#group-of-rows-1" aria-expanded="false" aria-controls="group-of-rows-1">
+        <td colspan="2"> No Measures Available </td>
+    </tr>
+    <tr th:each="key : ${measureMap.keySet}" class="clickable" data-toggle="collapse" data-target="${key}" aria-expanded="false" aria-controls="group-of-rows-1">
+        <td><span th:text="${key}"> Date </span></td>
+        <td><i class="fa fa-plus" aria-hidden="true"></i></td>
+    </tr>
+    </tbody>
+    <tbody th:each="key : ${measureMap.keySet}" id="${key}" class="collapse">
+    <tr th:each="measure : ${measureMap.get(key)}">
+        <td><span th:text="${measure.date}"> Date </span></td>
+        <td><span th:text="${measure.time}"> Time </span></td>
+        <td><span th:text="${measure.averageCOConcentration}"> CO Concentration </span></td>
+        <td><span th:text="${measure.averageSensorResponseCO}"> Sensor CO </span></td>
+        <td><span th:text="${measure.averageNonMetanicHydroCarbons}"> Non-Metanic HC </span></td>
+        <td><span th:text="${measure.averageBenzeneConcentration}"> Benzene Concentration  </span></td>
+        <td><span th:text="${measure.averageSensorResponseNMHC}">Sensor NMHC </span></td>
+
+        <td><span th:text="${measure.averageNOXConcentration}"> NOx Concentration </span></td>
+        <td><span th:text="${measure.averageSensorResponseNOX}"> Sensor NOx </span></td>
+
+        <td><span th:text="${measure.averageNO2Concentration}"> NO2 Concentration </span></td>
+        <td><span th:text="${measure.averageSensorResponseNO2}"> Sensor NO2 </span></td>
+
+        <td><span th:text="${measure.averageSensorResponseO3}"> Sensor O3 </span></td>
+
+        <td><span th:text="${measure.temperature}"> Temperature </span></td>
+        <td><span th:text="${measure.relativeHumidity}"> Relative Humidity </span></td>
+        <td><span th:text="${measure.absoluteHumidity}"> Absolute Humidity </span></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

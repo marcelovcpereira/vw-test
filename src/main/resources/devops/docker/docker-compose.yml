@@ -1,0 +1,37 @@
+version: '3'
+services:
+  marcelo-vw-test:
+    depends_on:
+      - marcelo-mysql
+    image: marcelo-vw-test:latest
+    ports:
+      - "8080:8080"
+    environment:
+      CSV_SEPARATOR: ;
+      CSV_DATE_PATTERN: dd/MM/yyyy
+      CSV_TIME_PATTERN: HH.mm.ss
+      CSV_PATH: /scripts/AirQualityUCI.csv
+      MEASURES_DATABASE_HOST: "10.5.0.8"
+      MEASURES_DATABASE_PORT: "3306"
+      MEASURES_DATABASE_NAME: "measures"
+      MEASURES_DATABASE_PASSWORD: root
+      MEASURES_DATABASE_USER: root
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.7
+  marcelo-mysql:
+    image: mysql:5.6
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: measures
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.8
+networks:
+  vpcbr:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16

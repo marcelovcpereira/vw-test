@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p th:text="'All measures with NO2 average concentration grater than EU Std grouped by date'" />
+<p th:text="'Total Rows: ' + ${totalRows}" />
+<table>
+    <thead>
+    <tr>
+        <th> Date </th>
+        <th> Time </th>
+        <th> Average CO Concentration </th>
+        <th> Average Sensor Response CO </th>
+        <th> Average Non-Metanic HydroCarbons </th>
+        <th> Average Benzene Concentration </th>
+        <th> Sensor NMHC </th>
+        <th> Average NOx Concentration </th>
+        <th> Sensor NOx </th>
+        <th> Average NO2 Concentration </th>
+        <th> Sensor NO2 </th>
+        <th> Sensor O3 </th>
+        <th> Temperature </th>
+        <th> Relative Humidity </th>
+        <th> Absolute Humidity </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${measures.empty}">
+        <td colspan="2"> No Measures Available </td>
+    </tr>
+    <tr th:each="measure : ${measures}">
+        <td><span th:text="${measure.date}"> Date </span></td>
+        <td><span th:text="${measure.time}"> Time </span></td>
+        <td><span th:text="${measure.averageCOConcentration}"> CO Concentration </span></td>
+        <td><span th:text="${measure.averageSensorResponseCO}"> Sensor CO </span></td>
+        <td><span th:text="${measure.averageNonMetanicHydroCarbons}"> Non-Metanic HC </span></td>
+        <td><span th:text="${measure.averageBenzeneConcentration}"> Benzene Concentration  </span></td>
+        <td><span th:text="${measure.averageSensorResponseNMHC}">Sensor NMHC </span></td>
+
+        <td><span th:text="${measure.averageNOXConcentration}"> NOx Concentration </span></td>
+        <td><span th:text="${measure.averageSensorResponseNOX}"> Sensor NOx </span></td>
+
+        <td><span th:text="${measure.averageNO2Concentration}"> NO2 Concentration </span></td>
+        <td><span th:text="${measure.averageSensorResponseNO2}"> Sensor NO2 </span></td>
+
+        <td><span th:text="${measure.averageSensorResponseO3}"> Sensor O3 </span></td>
+
+        <td><span th:text="${measure.temperature}"> Temperature </span></td>
+        <td><span th:text="${measure.relativeHumidity}"> Relative Humidity </span></td>
+        <td><span th:text="${measure.absoluteHumidity}"> Absolute Humidity </span></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
